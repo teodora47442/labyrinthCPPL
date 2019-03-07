@@ -1,0 +1,81 @@
+\hypertarget{classDeck}{}\section{Deck Class Reference}
+\label{classDeck}\index{Deck@{Deck}}
+
+
+This class represents a deck containing the goals that the player need to reach. Each player has a deck of the same size.  
+
+
+
+
+{\ttfamily \#include $<$Deck.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDeck_a10459a37e09fe362ae163dc7ae645f0e}{Deck}} (std\+::vector$<$ unsigned $>$ goals)
+\begin{DoxyCompactList}\small\item\em Constructs a deck from the given list. All the values in the list is copyied in the deck. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classDeck_ac8eb3ae174a4bec598b13ff53730efe2}{get\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Gives the goal that is on the top of the deck. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDeck_a0233c3d2ab48074ba0bb196d958d9dff}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Check if the deck is empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDeck_afe89a25e4f68a07c9b83b9223fc0e58b}{remove}} ()
+\begin{DoxyCompactList}\small\item\em Remove the goal at the top of the deck. This Method is called if player has reached the goal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDeck_abeb7668dc06b3f8118bf507234fb8ff4}{restore}} (std\+::vector$<$ unsigned $>$ goals)
+\begin{DoxyCompactList}\small\item\em restore the deck of the player. If players want to to play again, it empties the deck and add new goals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDeck_a10459a37e09fe362ae163dc7ae645f0e}\label{classDeck_a10459a37e09fe362ae163dc7ae645f0e}} 
+\index{Deck@{Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!Deck@{Deck}}
+\subsubsection{\texorpdfstring{Deck()}{Deck()}}
+{\footnotesize\ttfamily Deck\+::\+Deck (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned $>$}]{goals }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em goals} & \+: list containing goals. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDeck_ac8eb3ae174a4bec598b13ff53730efe2}\label{classDeck_ac8eb3ae174a4bec598b13ff53730efe2}} 
+\index{Deck@{Deck}!getGoal@{getGoal}}
+\index{getGoal@{getGoal}!Deck@{Deck}}
+\subsubsection{\texorpdfstring{getGoal()}{getGoal()}}
+{\footnotesize\ttfamily unsigned Deck\+::get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the goal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDeck_a0233c3d2ab48074ba0bb196d958d9dff}\label{classDeck_a0233c3d2ab48074ba0bb196d958d9dff}} 
+\index{Deck@{Deck}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Deck@{Deck}}
+\subsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Deck\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+true if deck is empty, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDeck_afe89a25e4f68a07c9b83b9223fc0e58b}\label{classDeck_afe89a25e4f68a07c9b83b9223fc0e58b}} 
+\index{Deck@{Deck}!remove@{remove}}
+\index{remove@{remove}!Deck@{Deck}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Deck\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDeck_abeb7668dc06b3f8118bf507234fb8ff4}\label{classDeck_abeb7668dc06b3f8118bf507234fb8ff4}} 
+\index{Deck@{Deck}!restore@{restore}}
+\index{restore@{restore}!Deck@{Deck}}
+\subsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily void Deck\+::restore (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned $>$}]{goals }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em goals} & \+: the list of the goals that the deck must contain \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{Deck_8h}{Deck.\+h}}\end{DoxyCompactItemize}

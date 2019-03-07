@@ -1,0 +1,103 @@
+\hypertarget{classTile}{}\section{Tile Class Reference}
+\label{classTile}\index{Tile@{Tile}}
+
+
+This class represents a tile from the board game \char`\"{}\+Labyrinth\char`\"{}. A tile is identified by his shape, his orientation and the goal it contains.  
+
+
+
+
+{\ttfamily \#include $<$Tile.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTile_a42ec731c01debadf43b942f949b3c316}{Tile}} (\mbox{\hyperlink{Shape_8h_a55b506070847a13554f8b879c1bfb37c}{Shape}} shape, unsigned goal, std\+::vector$<$ bool $>$ orientation)
+\begin{DoxyCompactList}\small\item\em Constructor of a tile depending on the shape, the orientation and the goal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTile_a86201a49ab2ba5408691ed360d08e427}{Tile}} (\mbox{\hyperlink{Shape_8h_a55b506070847a13554f8b879c1bfb37c}{Shape}} shape, unsigned goal)
+\begin{DoxyCompactList}\small\item\em Constructor of a tile depending on the shape and the goal. The orientation is random. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Shape_8h_a55b506070847a13554f8b879c1bfb37c}{Shape}} \mbox{\hyperlink{classTile_a4eab532aa493c106b1847263f1aa1185}{get\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em gives the shape of the tile. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{classTile_a60a2686c593dfc0ccceef28395eaa566}{get\+Orientation}} ()
+\begin{DoxyCompactList}\small\item\em Gives the orientation of the tile. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classTile_a9b4860cd460b41be96acef3015ce5a08}{get\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Gives the goal of the tile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTile_a100c31dd86bc6cdc67cf696f9ad391f1}{rotate}} (int direction)
+\begin{DoxyCompactList}\small\item\em Rotates the tile depending on the direction in parameter. The tile will be rotated in the left if the integer is negatif or 0, and in the right otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTile_a42ec731c01debadf43b942f949b3c316}\label{classTile_a42ec731c01debadf43b942f949b3c316}} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Shape_8h_a55b506070847a13554f8b879c1bfb37c}{Shape}}}]{shape,  }\item[{unsigned}]{goal,  }\item[{std\+::vector$<$ bool $>$}]{orientation }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & \+: the shape of the tile \\
+\hline
+{\em goal} & \+: the goal of the tile \\
+\hline
+{\em orientation} & \+: the orientation of the tile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTile_a86201a49ab2ba5408691ed360d08e427}\label{classTile_a86201a49ab2ba5408691ed360d08e427}} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Shape_8h_a55b506070847a13554f8b879c1bfb37c}{Shape}}}]{shape,  }\item[{unsigned}]{goal }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & \+: the shape of the tile \\
+\hline
+{\em goal} & \+: the goal of the tile. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTile_a9b4860cd460b41be96acef3015ce5a08}\label{classTile_a9b4860cd460b41be96acef3015ce5a08}} 
+\index{Tile@{Tile}!getGoal@{getGoal}}
+\index{getGoal@{getGoal}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{getGoal()}{getGoal()}}
+{\footnotesize\ttfamily unsigned Tile\+::get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the goal of the tile or 0 if the tile doesn\textquotesingle{}t get any goal. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTile_a60a2686c593dfc0ccceef28395eaa566}\label{classTile_a60a2686c593dfc0ccceef28395eaa566}} 
+\index{Tile@{Tile}!getOrientation@{getOrientation}}
+\index{getOrientation@{getOrientation}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
+{\footnotesize\ttfamily std\+::vector$<$bool$>$ Tile\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the orientation of the tile 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTile_a4eab532aa493c106b1847263f1aa1185}\label{classTile_a4eab532aa493c106b1847263f1aa1185}} 
+\index{Tile@{Tile}!getShape@{getShape}}
+\index{getShape@{getShape}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{getShape()}{getShape()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Shape_8h_a55b506070847a13554f8b879c1bfb37c}{Shape}} Tile\+::get\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the shape of the tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTile_a100c31dd86bc6cdc67cf696f9ad391f1}\label{classTile_a100c31dd86bc6cdc67cf696f9ad391f1}} 
+\index{Tile@{Tile}!rotate@{rotate}}
+\index{rotate@{rotate}!Tile@{Tile}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Tile\+::rotate (\begin{DoxyParamCaption}\item[{int}]{direction }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & \+: the direction the tile will be rotated to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{Tile_8h}{Tile.\+h}}\end{DoxyCompactItemize}

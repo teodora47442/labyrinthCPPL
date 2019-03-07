@@ -1,0 +1,101 @@
+\hypertarget{classBoard}{}\section{Board Class Reference}
+\label{classBoard}\index{Board@{Board}}
+
+
+The \mbox{\hyperlink{classBoard}{Board}} class is a representation of the game support. The board contains Tiles. Some tiles are fixed and the other tiles can be slide during the game.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoard_af3091ef5b079f7481c9938192794cf9f}{Board}} (unsigned size=7)
+\begin{DoxyCompactList}\small\item\em The constructor of the board. This board is a square and contains size $\ast$ size cases . Initially, the board game \char`\"{}\+Labyrinth\char`\"{} contains 7$\ast$7 cases. \end{DoxyCompactList}\item 
+std\+::deque$<$ std\+::deque$<$ \mbox{\hyperlink{classTile}{Tile}} $>$ $>$ \mbox{\hyperlink{classBoard_a6b286d61f93eb094b64bd10d16888907}{get\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Gives the access to the bord in read only mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{classBoard_a4c413c90078b3a5bfed50a454ea53ffb}{get\+Last\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em Gives the access to the last tile in read only mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPosition}{Position}} \mbox{\hyperlink{classBoard_a31d74fd92f5ad77d4a8e58a8be8a7d3c}{get\+Last\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gives the last position of the the last tile before exiting from the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_a1e0143b9611cab65161a2f5f0acd09ea}{insert\+Tile}} (\mbox{\hyperlink{structPosition}{Position}} pos)
+\begin{DoxyCompactList}\small\item\em Inserts the last tile in the board to the given position. The last tile can only be inserted to the edge of the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_a033583c0f7abf2a3fe9626709d380570}{rotate\+Last\+Tile}} (int direction)
+\begin{DoxyCompactList}\small\item\em Before inserting the last tile in the board, this one can be rotated. The last tile can be rotated to the right or to the left. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBoard_af3091ef5b079f7481c9938192794cf9f}\label{classBoard_af3091ef5b079f7481c9938192794cf9f}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{unsigned}]{size = {\ttfamily 7} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \+: the width and the height of the board. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoard_a6b286d61f93eb094b64bd10d16888907}\label{classBoard_a6b286d61f93eb094b64bd10d16888907}} 
+\index{Board@{Board}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!Board@{Board}}
+\subsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily std\+::deque$<$std\+::deque$<$\mbox{\hyperlink{classTile}{Tile}}$>$ $>$ Board\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the board of the game. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoard_a31d74fd92f5ad77d4a8e58a8be8a7d3c}\label{classBoard_a31d74fd92f5ad77d4a8e58a8be8a7d3c}} 
+\index{Board@{Board}!getLastPosition@{getLastPosition}}
+\index{getLastPosition@{getLastPosition}!Board@{Board}}
+\subsubsection{\texorpdfstring{getLastPosition()}{getLastPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPosition}{Position}} Board\+::get\+Last\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the last position of the last tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoard_a4c413c90078b3a5bfed50a454ea53ffb}\label{classBoard_a4c413c90078b3a5bfed50a454ea53ffb}} 
+\index{Board@{Board}!getLastTile@{getLastTile}}
+\index{getLastTile@{getLastTile}!Board@{Board}}
+\subsubsection{\texorpdfstring{getLastTile()}{getLastTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} Board\+::get\+Last\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+The last tile sitting out of the board. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoard_a1e0143b9611cab65161a2f5f0acd09ea}\label{classBoard_a1e0143b9611cab65161a2f5f0acd09ea}} 
+\index{Board@{Board}!insertTile@{insertTile}}
+\index{insertTile@{insertTile}!Board@{Board}}
+\subsubsection{\texorpdfstring{insertTile()}{insertTile()}}
+{\footnotesize\ttfamily void Board\+::insert\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}}}]{pos }\end{DoxyParamCaption})}
+
+Then this position must be a position representing one of the edge of the board.
+
+The index of the line or the column must be 0 or the last index of the board (6 in the \mbox{\hyperlink{classLabyrinth}{Labyrinth}} game). The other index must be odd. ex \+: position \mbox{[}0,1\mbox{]}, \mbox{[}6, 1\mbox{]}, ... we can insert the last tile position \mbox{[}2,3\mbox{]}, \mbox{[}0,1\mbox{]}, ... are invalid position
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \+: the position where the last tile must be insert. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoard_a033583c0f7abf2a3fe9626709d380570}\label{classBoard_a033583c0f7abf2a3fe9626709d380570}} 
+\index{Board@{Board}!rotateLastTile@{rotateLastTile}}
+\index{rotateLastTile@{rotateLastTile}!Board@{Board}}
+\subsubsection{\texorpdfstring{rotateLastTile()}{rotateLastTile()}}
+{\footnotesize\ttfamily void Board\+::rotate\+Last\+Tile (\begin{DoxyParamCaption}\item[{int}]{direction }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & \+: an integer representing the direction of the rotation. If direction $<$= 0, then the last tile will be rotated to the left. If direction $>$ 0, then the last tile will be rotated to the right. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{Board_8h}{Board.\+h}}\end{DoxyCompactItemize}

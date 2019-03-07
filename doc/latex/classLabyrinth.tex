@@ -1,0 +1,145 @@
+\hypertarget{classLabyrinth}{}\section{Labyrinth Class Reference}
+\label{classLabyrinth}\index{Labyrinth@{Labyrinth}}
+
+
+Main class of the game. \mbox{\hyperlink{classLabyrinth}{Labyrinth}} is constitued by a board filled of tiles that can have goals or not. The players need to reach the goals matching to their goal from the deck. There are 2 possible modes for the game \+: Kids mode and Normal mode.  
+
+
+
+
+{\ttfamily \#include $<$Labyrinth.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLabyrinth_a505ac0ac3ae87c1415ea30b6cf542bf5}{Labyrinth}} (int side, \mbox{\hyperlink{mode_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} mode=\mbox{\hyperlink{mode_8h_a46c8a310cf4c094f8c80e1cb8dc1f911a50d1448013c6f17125caee18aa418af7}{N\+O\+R\+M\+AL}})
+\begin{DoxyCompactList}\small\item\em Constructor of the labyrinth game. Default game mode is Normal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBoard}{Board}} \mbox{\hyperlink{classLabyrinth_a8fcfe09eb620ff9b48f937ae6ff2c8aa}{get\+Board}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \mbox{\hyperlink{classLabyrinth_a69d0f4074fbaa91f8eb052b1b4ad8b97}{get\+Players}} ()
+\item 
+void \mbox{\hyperlink{classLabyrinth_ad1492b8efcf788402bdd161f6cfc03c6}{add\+Player}} (\mbox{\hyperlink{classPlayer}{Player}})
+\begin{DoxyCompactList}\small\item\em adds a player in the list of the players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLabyrinth_adb4f7dc7978f69919812a5dcd735da21}{next\+Player}} ()
+\begin{DoxyCompactList}\small\item\em updates the current\+Player at the end of a round or at the first round of the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLabyrinth_af81c73f5853fee97d015889d30475ffe}{insert\+Tile}} (\mbox{\hyperlink{structPosition}{Position}} pos)
+\begin{DoxyCompactList}\small\item\em At each turn, the player needs to insert a tile on a mobile row or column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLabyrinth_ae2d8d7eb36191331670ed5dada124995}{move}} (\mbox{\hyperlink{classPlayer}{Player}} player, \mbox{\hyperlink{classTile}{Tile}} tile)
+\begin{DoxyCompactList}\small\item\em Searches a path to the tile, between current player tile and destination tile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLabyrinth_a7685687fa2cd4fe73aa5d5643ac5d78b}{is\+End\+Of\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Check if it\textquotesingle{}s there is a winner of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} \mbox{\hyperlink{classLabyrinth_a5180cf4972163afe609de1e1df4ae49f}{get\+Winner}} ()
+\begin{DoxyCompactList}\small\item\em Depending on the game mode, the winner is either the player who has first finished all the goals from his deck, or the player who, besides emptying his deck, has returned to his departure tile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLabyrinth_a550a98e5fb1d3a278527e716231f620b}{new\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Restart a round. Move the players back to their departure case. Reinitialise each player\textquotesingle{}s deck. Shuffle tiles of the board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLabyrinth_a505ac0ac3ae87c1415ea30b6cf542bf5}\label{classLabyrinth_a505ac0ac3ae87c1415ea30b6cf542bf5}} 
+\index{Labyrinth@{Labyrinth}!Labyrinth@{Labyrinth}}
+\index{Labyrinth@{Labyrinth}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{Labyrinth()}{Labyrinth()}}
+{\footnotesize\ttfamily Labyrinth\+::\+Labyrinth (\begin{DoxyParamCaption}\item[{int}]{side,  }\item[{\mbox{\hyperlink{mode_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}}}]{mode = {\ttfamily \mbox{\hyperlink{mode_8h_a46c8a310cf4c094f8c80e1cb8dc1f911a50d1448013c6f17125caee18aa418af7}{N\+O\+R\+M\+AL}}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & \+: the width and heigth of the board \\
+\hline
+{\em mode} & \+: the mode of the game \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLabyrinth_ad1492b8efcf788402bdd161f6cfc03c6}\label{classLabyrinth_ad1492b8efcf788402bdd161f6cfc03c6}} 
+\index{Labyrinth@{Labyrinth}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{addPlayer()}{addPlayer()}}
+{\footnotesize\ttfamily void Labyrinth\+::add\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & player to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabyrinth_a8fcfe09eb620ff9b48f937ae6ff2c8aa}\label{classLabyrinth_a8fcfe09eb620ff9b48f937ae6ff2c8aa}} 
+\index{Labyrinth@{Labyrinth}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBoard}{Board}} Labyrinth\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gives the board in read only mode
+
+\begin{DoxyReturn}{Returns}
+the value of board 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLabyrinth_a69d0f4074fbaa91f8eb052b1b4ad8b97}\label{classLabyrinth_a69d0f4074fbaa91f8eb052b1b4ad8b97}} 
+\index{Labyrinth@{Labyrinth}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{getPlayers()}{getPlayers()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classPlayer}{Player}}$>$ Labyrinth\+::get\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gives the list of the players in read only mode
+
+\begin{DoxyReturn}{Returns}
+all the players 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLabyrinth_a5180cf4972163afe609de1e1df4ae49f}\label{classLabyrinth_a5180cf4972163afe609de1e1df4ae49f}} 
+\index{Labyrinth@{Labyrinth}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{getWinner()}{getWinner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} Labyrinth\+::get\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classPlayer}{Player}} who has cleared his deck and/or returned to his departure tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLabyrinth_af81c73f5853fee97d015889d30475ffe}\label{classLabyrinth_af81c73f5853fee97d015889d30475ffe}} 
+\index{Labyrinth@{Labyrinth}!insertTile@{insertTile}}
+\index{insertTile@{insertTile}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{insertTile()}{insertTile()}}
+{\footnotesize\ttfamily void Labyrinth\+::insert\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}}}]{pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \+: position where the player wants to insert the tile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabyrinth_a7685687fa2cd4fe73aa5d5643ac5d78b}\label{classLabyrinth_a7685687fa2cd4fe73aa5d5643ac5d78b}} 
+\index{Labyrinth@{Labyrinth}!isEndOfGame@{isEndOfGame}}
+\index{isEndOfGame@{isEndOfGame}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{isEndOfGame()}{isEndOfGame()}}
+{\footnotesize\ttfamily bool Labyrinth\+::is\+End\+Of\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+true if it\textquotesingle{}s the end of the game, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLabyrinth_ae2d8d7eb36191331670ed5dada124995}\label{classLabyrinth_ae2d8d7eb36191331670ed5dada124995}} 
+\index{Labyrinth@{Labyrinth}!move@{move}}
+\index{move@{move}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Labyrinth\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}}]{player,  }\item[{\mbox{\hyperlink{classTile}{Tile}}}]{tile }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \+: player who wants to make a move. \\
+\hline
+{\em tile} & \+: destination tile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabyrinth_a550a98e5fb1d3a278527e716231f620b}\label{classLabyrinth_a550a98e5fb1d3a278527e716231f620b}} 
+\index{Labyrinth@{Labyrinth}!newGame@{newGame}}
+\index{newGame@{newGame}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{newGame()}{newGame()}}
+{\footnotesize\ttfamily void Labyrinth\+::new\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classLabyrinth_adb4f7dc7978f69919812a5dcd735da21}\label{classLabyrinth_adb4f7dc7978f69919812a5dcd735da21}} 
+\index{Labyrinth@{Labyrinth}!nextPlayer@{nextPlayer}}
+\index{nextPlayer@{nextPlayer}!Labyrinth@{Labyrinth}}
+\subsubsection{\texorpdfstring{nextPlayer()}{nextPlayer()}}
+{\footnotesize\ttfamily void Labyrinth\+::next\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{Labyrinth_8h}{Labyrinth.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,139 @@
+\hypertarget{classPlayer}{}\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+The \mbox{\hyperlink{classPlayer}{Player}} class represents a \mbox{\hyperlink{classPlayer}{Player}}. Each player has a name, an age, a deck, a departure tile and a current position on a tile.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer_abf29edb717ec5ec6a50ac04aae5906da}{Player}} (std\+::string name, unsigned age, \mbox{\hyperlink{classTile}{Tile}} departure, std\+::vector$<$ unsigned $>$ goals)
+\begin{DoxyCompactList}\small\item\em Constructs a player with a name, age, a departure tile and goals. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPlayer_af1aa472885d589516f483e26e786600e}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gives the name of the player. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classPlayer_aec713a46af4b798cc03d8f62309b9e52}{get\+Age}} ()
+\begin{DoxyCompactList}\small\item\em Gives the age of the player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{classPlayer_a164e97d2f255d0a6c55b9b355e079999}{get\+Current\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gives the current position of the player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{classPlayer_a9d585bfefe990358cf55448406cc047b}{get\+Departure\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em Gives the departure position of the player. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classPlayer_aae4cea29ac6534922810177b488bdf64}{get\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Gives the goal that the player must reach. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a6c4732be91110899d5662ca9a1d76e4e}{move\+Forward}} (\mbox{\hyperlink{classTile}{Tile}} \&destination)
+\begin{DoxyCompactList}\small\item\em This method replaces player\textquotesingle{}s current\+Position by the destination tile. However, it does not verify if the path between his current position and destination tile exists. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlayer_addccad6110e3723c735ed69c0239cabe}{is\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em Check if player reached all his goals from deck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a484b4e7361c5f6eaa4a2bf645e15e745}{change\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Check goal from current tile, if goal equals to the player\textquotesingle{}s goal, it removes goal from his deck. Otherwise, it does nothing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ab6b15b5ec31d724bfe33f7888d5d85fa}{replace}} (\mbox{\hyperlink{classTile}{Tile}} \&)
+\begin{DoxyCompactList}\small\item\em If player sits on the tile that is out of the board, then the player must be placed on the opposite tile in the row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer_abf29edb717ec5ec6a50ac04aae5906da}\label{classPlayer_abf29edb717ec5ec6a50ac04aae5906da}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{unsigned}]{age,  }\item[{\mbox{\hyperlink{classTile}{Tile}}}]{departure,  }\item[{std\+::vector$<$ unsigned $>$}]{goals }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: player\textquotesingle{}s name \\
+\hline
+{\em age} & \+: player\textquotesingle{}s age \\
+\hline
+{\em departure} & \+: player\textquotesingle{}s departure tile (1, 2, 3 or 4) \\
+\hline
+{\em goals} & \+: the list of goals in orther to initialize the deck \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_a484b4e7361c5f6eaa4a2bf645e15e745}\label{classPlayer_a484b4e7361c5f6eaa4a2bf645e15e745}} 
+\index{Player@{Player}!changeGoal@{changeGoal}}
+\index{changeGoal@{changeGoal}!Player@{Player}}
+\subsubsection{\texorpdfstring{changeGoal()}{changeGoal()}}
+{\footnotesize\ttfamily void Player\+::change\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPlayer_aec713a46af4b798cc03d8f62309b9e52}\label{classPlayer_aec713a46af4b798cc03d8f62309b9e52}} 
+\index{Player@{Player}!getAge@{getAge}}
+\index{getAge@{getAge}!Player@{Player}}
+\subsubsection{\texorpdfstring{getAge()}{getAge()}}
+{\footnotesize\ttfamily unsigned Player\+::get\+Age (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+age of player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a164e97d2f255d0a6c55b9b355e079999}\label{classPlayer_a164e97d2f255d0a6c55b9b355e079999}} 
+\index{Player@{Player}!getCurrentPosition@{getCurrentPosition}}
+\index{getCurrentPosition@{getCurrentPosition}!Player@{Player}}
+\subsubsection{\texorpdfstring{getCurrentPosition()}{getCurrentPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} Player\+::get\+Current\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the current position of the player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a9d585bfefe990358cf55448406cc047b}\label{classPlayer_a9d585bfefe990358cf55448406cc047b}} 
+\index{Player@{Player}!getDepartureTile@{getDepartureTile}}
+\index{getDepartureTile@{getDepartureTile}!Player@{Player}}
+\subsubsection{\texorpdfstring{getDepartureTile()}{getDepartureTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} Player\+::get\+Departure\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the departure position of the player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_aae4cea29ac6534922810177b488bdf64}\label{classPlayer_aae4cea29ac6534922810177b488bdf64}} 
+\index{Player@{Player}!getGoal@{getGoal}}
+\index{getGoal@{getGoal}!Player@{Player}}
+\subsubsection{\texorpdfstring{getGoal()}{getGoal()}}
+{\footnotesize\ttfamily unsigned Player\+::get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the current goal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_af1aa472885d589516f483e26e786600e}\label{classPlayer_af1aa472885d589516f483e26e786600e}} 
+\index{Player@{Player}!getName@{getName}}
+\index{getName@{getName}!Player@{Player}}
+\subsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Player\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the name of player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_addccad6110e3723c735ed69c0239cabe}\label{classPlayer_addccad6110e3723c735ed69c0239cabe}} 
+\index{Player@{Player}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Player@{Player}}
+\subsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Player\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+true if the player reached all his goals, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a6c4732be91110899d5662ca9a1d76e4e}\label{classPlayer_a6c4732be91110899d5662ca9a1d76e4e}} 
+\index{Player@{Player}!moveForward@{moveForward}}
+\index{moveForward@{moveForward}!Player@{Player}}
+\subsubsection{\texorpdfstring{moveForward()}{moveForward()}}
+{\footnotesize\ttfamily void Player\+::move\+Forward (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTile}{Tile}} \&}]{destination }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & \+: new current tile of the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_ab6b15b5ec31d724bfe33f7888d5d85fa}\label{classPlayer_ab6b15b5ec31d724bfe33f7888d5d85fa}} 
+\index{Player@{Player}!replace@{replace}}
+\index{replace@{replace}!Player@{Player}}
+\subsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily void Player\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTile}{Tile}} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{Player_8h}{Player.\+h}}\end{DoxyCompactItemize}

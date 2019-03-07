@@ -1,0 +1,67 @@
+\hypertarget{class_observable}{}\section{Observable$<$ Object $>$ Class Template Reference}
+\label{class_observable}\index{Observable$<$ Object $>$@{Observable$<$ Object $>$}}
+
+
+The observable class has a list of all his observers. Also contains functions that allow to add/remove observer and a function to notify the observer(s) of any changes of an observable.  
+
+
+
+
+{\ttfamily \#include $<$Observable.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observable_ae32f005844f7abe6d3984cca9a13e2a2}{add\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}}$<$ Object $>$ $\ast$obs)
+\begin{DoxyCompactList}\small\item\em Allow to add observers of a subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_ae247227a79f81f542d7fe0634a55cdaa}{remove\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}}$<$ Object $>$ $\ast$obs)
+\begin{DoxyCompactList}\small\item\em Allow to remove observers of a subject. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_observable_a1fc03776d2f198f2a102f55b2a2946c1}\label{class_observable_a1fc03776d2f198f2a102f55b2a2946c1}} 
+void \mbox{\hyperlink{class_observable_a1fc03776d2f198f2a102f55b2a2946c1}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notify the observers of a changement from the subject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Object$>$\newline
+class Observable$<$ Object $>$}
+
+The observable class has a list of all his observers. Also contains functions that allow to add/remove observer and a function to notify the observer(s) of any changes of an observable. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_observable_ae32f005844f7abe6d3984cca9a13e2a2}\label{class_observable_ae32f005844f7abe6d3984cca9a13e2a2}} 
+\index{Observable$<$ Object $>$@{Observable$<$ Object $>$}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!Observable$<$ Object $>$@{Observable$<$ Object $>$}}
+\subsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily template$<$typename Object $>$ \\
+void \mbox{\hyperlink{class_observable}{Observable}}$<$ Object $>$\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}}$<$ Object $>$ $\ast$}]{obs }\end{DoxyParamCaption})}
+
+
+
+Allow to add observers of a subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & that needs to be added to the observer list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_observable_ae247227a79f81f542d7fe0634a55cdaa}\label{class_observable_ae247227a79f81f542d7fe0634a55cdaa}} 
+\index{Observable$<$ Object $>$@{Observable$<$ Object $>$}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!Observable$<$ Object $>$@{Observable$<$ Object $>$}}
+\subsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily template$<$typename Object $>$ \\
+void \mbox{\hyperlink{class_observable}{Observable}}$<$ Object $>$\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}}$<$ Object $>$ $\ast$}]{obs }\end{DoxyParamCaption})}
+
+
+
+Allow to remove observers of a subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obser} & that needs to be removed from the observer list \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Observable.\+h\end{DoxyCompactItemize}

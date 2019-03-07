@@ -1,0 +1,15 @@
+\hypertarget{Board_8h}{}\section{core/\+Board.h File Reference}
+\label{Board_8h}\index{core/Board.h@{core/Board.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include \char`\"{}Position.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tile.\+h\char`\"{}}\newline
+Include dependency graph for Board.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBoard}{Board}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classBoard}{Board}} class is a representation of the game support. The board contains Tiles. Some tiles are fixed and the other tiles can be slide duing the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
