@@ -1,12 +1,8 @@
 #include "Player.h"
 
-Player::Player (std::string name, unsigned age, Tile departure, std::vector<unsigned> goals){
-    this->name = name;
-    this->age = age;
-    this->departureTile = departure;
-    this->currentPosition = departure;
-    this->deck = goals;
-}
+Player::Player (std::string name, unsigned age, Tile departure, std::vector<unsigned> goals):
+    name(name), age(age), departureTile(departure), currentPosition(departure), deck(Deck(goals))
+{}
 
 std::string Player::getName (){
     return name;

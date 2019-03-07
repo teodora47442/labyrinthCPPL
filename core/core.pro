@@ -17,4 +17,4 @@ HEADERS += \
 
 SOURCES += \
     Deck.cpp \
-    player.cpp
+    Player.cpp
