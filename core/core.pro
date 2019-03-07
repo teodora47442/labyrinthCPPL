@@ -16,3 +16,5 @@ HEADERS += \
     Mode.h
 
 SOURCES += \
+    Deck.cpp \
+    player.cpp

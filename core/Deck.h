@@ -28,7 +28,7 @@ public:
      *
      * @param goals : list containing goals.
      */
-    Deck (std::vector<unsigned> goals);
+    Deck (std::vector<unsigned> goalsVect);
 
     /**
      * \brief Gives the goal that is on the top of the deck.
@@ -57,7 +57,7 @@ public:
      *
      * @param goals : the list of the goals that the deck must contain
      */
-    void restore(std::vector<unsigned> goals);
+    void restore(std::vector<unsigned> goalsVect);
 
 };
 
