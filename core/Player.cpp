@@ -1,7 +1,7 @@
 #include "Player.h"
 
-Player::Player (std::string name, unsigned age, Tile departure, std::vector<unsigned> goals):
-    name(name), age(age), departureTile(departure), currentPosition(departure), deck(Deck(goals))
+Player::Player (std::string _name, unsigned _age, Tile& departure, std::vector<unsigned> goals):
+    name(_name), age(_age), departureTile(departure), currentPosition(departure), deck(Deck(goals))
 {}
 
 std::string Player::getName (){

@@ -63,7 +63,7 @@ public:
      * @param goals : the list of goals in orther to initialize the deck
      */
 
-    Player (std::string name, unsigned age, Tile departure, std::vector<unsigned> goals);
+    Player (std::string _name, unsigned _age, Tile& departure, std::vector<unsigned> goals);
 
     /**
      * \brief Gives the name of the player
