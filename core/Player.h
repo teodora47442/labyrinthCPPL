@@ -126,7 +126,7 @@ public:
      * \brief If player sits on the tile that is out of the board,
      * then the player must be placed on the opposite tile in the row.
      */
-    void replace(Tile&);
+    void replace(Tile& tile);
 
 };
 

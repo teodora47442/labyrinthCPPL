@@ -27,7 +27,7 @@ unsigned Player::getGoal(){
 }
 
 void Player::moveForward (Tile& destination){
-
+    currentPosition = destination;
 }
 
 
@@ -40,6 +40,6 @@ void Player::changeGoal (){
 }
 
 
-void Player::replace(Tile&){
+void Player::replace(Tile& tile){
 
 }
