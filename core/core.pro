@@ -13,8 +13,11 @@ HEADERS += \
     Position.h \
     Shape.h \
     Tile.h \
-    Mode.h
+    Mode.h \
+    random.hpp
 
 SOURCES += \
     Deck.cpp \
-    Player.cpp
+    Player.cpp \
+    Tile.cpp \
+    Board.cpp

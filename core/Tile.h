@@ -47,6 +47,9 @@ private:
    */
   unsigned goal;
 
+  void checkParameters(Shape shape, unsigned goal, std::vector<bool>);
+
+  bool isCompatible(Shape shape, std::vector<bool>);
 
 public:
   /**
