@@ -50,6 +50,8 @@ Tile::Tile(Shape shape_, unsigned goal_) : shape(shape_), goal(goal_){
 
 }
 
+Tile::Tile() : Tile(Shape::I_SHAPE, 0){}
+
 Shape Tile::getShape(){
     return shape;
 }

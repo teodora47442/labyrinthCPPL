@@ -53,6 +53,10 @@ private:
 
 public:
   /**
+   * @brief Default constructor of a tile. The default tile is a I.
+   */
+  Tile ();
+  /**
    * \brief Constructor of a tile depending on the shape, the orientation and the goal
    *
    * @param  shape : the shape of the tile

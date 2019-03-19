@@ -22,7 +22,7 @@ private:
     /*!
      * \brief board represents the support of the game Labyrinth. It contains tiles.
      */
-    std::deque<std::deque<Tile>> board;
+    std::deque<std::deque<Tile*>> board;
 
     /*!
      * \brief lastTile is the tile out of the board.
@@ -37,22 +37,28 @@ private:
      */
     Position lastPosition;
 
+    bool isBorderPosition(Position pos);
+
+    bool isValid(Position pos);
+
 
 public:
     /**
       * \brief The constructor of the board. This board is a square and contains size * size
       *        cases . Initially, the board game "Labyrinth" contains 7*7 cases.
+      *        We specify the last tile of the game
       *
+      * @param  lastTile : the last Tile of the game
       * @param  size : the width and the height of the board.
       */
-    Board (unsigned size = 7);
+    Board (Tile& lastTile, unsigned size = 7);
 
     /**
       * \brief Gives the access to the bord in read only mode.
       *
       * @return the board of the game.
       */
-    std::deque<std::deque<Tile>> getBoard();
+    std::deque<std::deque<Tile*>> getBoard();
 
     /**
       * \brief Gives the access to the last tile in read only mode.
