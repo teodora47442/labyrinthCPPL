@@ -11,4 +11,4 @@ OTHER_FILES += \
 QMAKE\_CXXFLAGS += -Wpedantic \
                     -std=c++1z
 
-CONFIG += c++1z
+CONFIG += c++14

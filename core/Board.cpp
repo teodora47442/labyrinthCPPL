@@ -1,21 +1,23 @@
 #include "Board.h"
 #include <stdexcept>
 
-Board::Board(Tile& lastTile_, unsigned size) : lastTile(lastTile_){
-    unsigned nbL = 0, nbT = 0, nbI = 0;
-    board = std::deque<std::deque<Tile*>>(size);
+Board::Board(unsigned size) {
+    board = std::deque<std::deque<Tile>>(size);
     for (unsigned i = 0; i<size; i++) {
-        board[i] = std::deque<Tile*>(7);
+        board[i] = std::deque<Tile>(size);
     }
 
+}
+
+void Board::initialize(){
 
 }
 
-std::deque<std::deque<Tile*>> Board::getBoard(){
-    return board;
-}
+//std::deque<std::deque<Tile*>> Board::getBoard(){
+//    return board;
+//}
 
-Tile Board::getLastTile(){
+Tile& Board::getLastTile (){
     return lastTile;
 }
 

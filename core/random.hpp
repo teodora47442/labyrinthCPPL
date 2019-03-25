@@ -1,6 +1,11 @@
 #ifndef RANDOM_HPP
 #define RANDOM_HPP
 
+#ifdef _WIN32
+//#include <ctime>
+#include <chrono>
+#endif
+
 #include <random>
 #include <type_traits>
 #include <memory>
@@ -34,7 +39,12 @@ namespace math
                 throw std::invalid_argument {"Maximum must be higher than minimum"};
 
         static std::random_device rd;
-        static std::mt19937 rng {rd()};
+
+        #ifndef _WIN32
+            static std::mt19937 rng {rd()};
+        #else
+            static std::mt19937 rng {static_cast<unsigned>(std::chrono::system_clock::now().time_since_epoch().count())};
+        #endif
         static std::mt19937 rng_deterministic {};
 
         using DIST = std::conditional_t<std::is_integral<T>::value, std::uniform_int_distribution<T>, std::uniform_real_distribution<T>>;

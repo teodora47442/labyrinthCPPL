@@ -5,7 +5,10 @@ CONFIG += console
 
 LIBS += -L../lib -llibcore
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    brol.cpp \
+    TileTest.cpp \
+    DeckTest.cpp
 
 HEADERS += \
     catch.hpp \

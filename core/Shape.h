@@ -27,7 +27,13 @@ enum Shape{
      *        has possibly two ways to reach another Tile. These two
      *        ways must be opposite inside the tile.
      */
-    I_SHAPE
+    I_SHAPE,
+
+    /*!
+     * \brief This enum represents no shape. That means the tile having
+     *        this shape isn't a tile.
+     */
+    NO_SHAPE
 };
 
 #endif // SHAPE_H

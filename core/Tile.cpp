@@ -46,11 +46,15 @@ Tile::Tile(Shape shape_, unsigned goal_) : shape(shape_), goal(goal_){
             orientation[random] = false;
             orientation[(random+2)%4] = false;
         break;
+        default :
+            for(unsigned i = 0; i<4; i++)
+                orientation[i] = false;
+        break;
     }
 
 }
 
-Tile::Tile() : Tile(Shape::I_SHAPE, 0){}
+Tile::Tile() : Tile(Shape::NO_SHAPE, 0){}
 
 Shape Tile::getShape(){
     return shape;

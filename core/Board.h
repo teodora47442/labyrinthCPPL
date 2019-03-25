@@ -22,20 +22,22 @@ private:
     /*!
      * \brief board represents the support of the game Labyrinth. It contains tiles.
      */
-    std::deque<std::deque<Tile*>> board;
+    std::deque<std::deque<Tile>> board;
 
     /*!
      * \brief lastTile is the tile out of the board.
      *        During the game, the last tile can be set in the board and the tile exiting
      *        from the board becomes the new last tile
      */
-    Tile& lastTile;
+    Tile lastTile;
 
     /*!
      * \brief lastPosition is the position of the last tile before exiting from the board.
      *        The last tile can't be inserted to the position where it comes from.
      */
     Position lastPosition;
+
+    void initialize();
 
     bool isBorderPosition(Position pos);
 
@@ -51,7 +53,7 @@ public:
       * @param  lastTile : the last Tile of the game
       * @param  size : the width and the height of the board.
       */
-    Board (Tile& lastTile, unsigned size = 7);
+    Board (unsigned size = 7);
 
     /**
       * \brief Gives the access to the bord in read only mode.
@@ -65,7 +67,7 @@ public:
       *
       * @return The last tile sitting out of the board.
       */
-    Tile getLastTile();
+    Tile& getLastTile ();
 
     /**
       * \brief Gives the last position of the the last tile before exiting from the board.
