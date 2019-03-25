@@ -37,7 +37,11 @@ private:
      */
     Position lastPosition;
 
-    void initialize();
+    void init(std::vector<unsigned>&);
+
+    void fill(std::vector<unsigned>&);
+
+    unsigned randomGoal(std::vector<unsigned>&);
 
     bool isBorderPosition(Position pos);
 
@@ -60,7 +64,7 @@ public:
       *
       * @return the board of the game.
       */
-    std::deque<std::deque<Tile*>> getBoard();
+    std::deque<std::deque<Tile>> getBoard();
 
     /**
       * \brief Gives the access to the last tile in read only mode.

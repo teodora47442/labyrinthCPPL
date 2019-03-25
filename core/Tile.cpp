@@ -36,13 +36,13 @@ Tile::Tile(Shape shape_, unsigned goal_) : shape(shape_), goal(goal_){
     unsigned random = unsigned(dg::math::random(0,100))%4;
 
     switch(shape){
-        case Shape::T_SHAPE : orientation[random] = false;
+        case Shape::T : orientation[random] = false;
         break;
-        case Shape::L_SHAPE :
+        case Shape::L :
             orientation[random] = false;
             orientation[(random+1)%4] = false;
         break;
-        case Shape::I_SHAPE :
+        case Shape::I :
             orientation[random] = false;
             orientation[(random+2)%4] = false;
         break;
