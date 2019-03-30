@@ -41,12 +41,17 @@ private:
 
     void fill(std::vector<unsigned>&);
 
+    void fillLine(std::deque<Tile>&, std::vector<Tile>&);
+
     unsigned randomGoal(std::vector<unsigned>&);
 
     bool isBorderPosition(Position pos);
 
     bool isValid(Position pos);
 
+    void insertInLine(Position pos);
+
+    void insertInColumn(Position pos);
 
 public:
     /**

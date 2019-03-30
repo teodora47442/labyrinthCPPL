@@ -20,30 +20,30 @@ Board::Board(unsigned size)
 }
 
 void Board::init(std::vector<unsigned int> & goals){
-    std::deque<Tile> line = board.at(0);
+    std::deque<Tile>& line0 = board.at(0);
     // ok
-    line[0] = Tile(Shape::L, randomGoal(goals), {0, 1, 1, 0});
-    line[2] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
-    line[4] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
-    line[6] = Tile(Shape::L, randomGoal(goals), {0, 0, 1, 1});
-    line = board.at(2);
+    line0[0] = Tile(Shape::L, randomGoal(goals), {0, 1, 1, 0});
+    line0[2] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
+    line0[4] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
+    line0[6] = Tile(Shape::L, randomGoal(goals), {0, 0, 1, 1});
+    std::deque<Tile>& line2 = board.at(2);
     // ok
-    line[0] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
-    line[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
-    line[4] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
-    line[6] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
-    line = board.at(4);
+    line2[0] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
+    line2[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
+    line2[4] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
+    line2[6] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
+    std::deque<Tile>& line4 = board.at(4);
     // ok
-    line[0] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
-    line[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
-    line[4] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
-    line[6] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
-    line = board.at(6);
+    line4[0] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
+    line4[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
+    line4[4] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
+    line4[6] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
+    std::deque<Tile>& line6 = board.at(6);
     //
-    line[0] = Tile(Shape::L, randomGoal(goals), {1, 1, 0, 0});
-    line[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
-    line[4] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
-    line[6] = Tile(Shape::L, randomGoal(goals), {1, 0, 0, 1});
+    line6[0] = Tile(Shape::L, randomGoal(goals), {1, 1, 0, 0});
+    line6[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
+    line6[4] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
+    line6[6] = Tile(Shape::L, randomGoal(goals), {1, 0, 0, 1});
 }
 
 void Board::fill(std::vector<unsigned int> & goals){
@@ -60,15 +60,18 @@ void Board::fill(std::vector<unsigned int> & goals){
     std::random_shuffle(tiles.begin(), tiles.end());
 
     for(unsigned i = 0; i < board.size(); i++){
-        line = board.at(i);
-        for(unsigned j = 0; j<line.size(); j++){
-            if(line[j].getShape() == Shape::NO_SHAPE){
-                line[j] = tiles.at(tiles.size()-1);
-                tiles.pop_back();
-            }
-        }
+        fillLine(board.at(i), tiles);
     }
     lastTile = tiles.at(0);
+}
+
+void Board::fillLine(std::deque<Tile>& line, std::vector<Tile>& tiles){
+    for(unsigned i = 0; i<line.size(); i++){
+        if(line.at(i).getShape() == Shape::NO_SHAPE){
+            line[i] = tiles.at(tiles.size()-1);
+            tiles.pop_back();
+        }
+    }
 }
 
 unsigned Board::randomGoal(std::vector<unsigned>& goals){
@@ -99,6 +102,13 @@ void Board::rotateLastTile(int direction){
 void Board::insertTile(Position pos){
     if(!isBorderPosition(pos) || !isValid(pos))
         throw std::invalid_argument("Invalid position to insert tile");
+    // essaie d'inserer lastTile dans une ligne
+    if(pos.column == 0 || pos.column ==  board.size()-1){
+        insertInLine(pos);
+    // sinon, cela veut dire qu'on essaie d'insérer dans une colonne
+    } else {
+
+    }
 }
 
 bool Board::isBorderPosition(Position pos){
@@ -118,4 +128,28 @@ bool Board::isValid(Position pos){
         return false;
 }
 
+void Board::insertInLine(Position pos){
+    std::deque<Tile>& line = board.at(pos.line);
+    Tile newTile = lastTile;
+    // si on insere la tuile par la gauche
+    if(pos.column == 0){
+        line.push_front(newTile);
+        lastTile = line.at(line.size()-1);
+        line.pop_back();
+    } else {
+        line.push_back(newTile);
+        lastTile = line.at(0);
+        line.pop_front();
+    }
+}
 
+void Board::insertInColumn(Position pos){
+    Tile newTile = lastTile;
+    // si on essaie d'insérer depuis le haut du plateau
+    if(pos.line == 0){
+
+    // sinon, cela veut dire qu'on insere depuis le bas du plateau
+    } else {
+
+    }
+}
