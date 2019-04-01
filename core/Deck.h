@@ -31,6 +31,13 @@ public:
     Deck (std::vector<unsigned> goalsVect);
 
     /**
+     * @brief Gives the number of elements in the deck.
+     *
+     * @return the size of the deck.
+     */
+    unsigned size();
+
+    /**
      * \brief Gives the goal that is on the top of the deck.
      *
      * @return the goal

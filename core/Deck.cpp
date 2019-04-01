@@ -6,12 +6,16 @@ Deck::Deck (std::vector<unsigned> goalsVect){
     }
 }
 
+unsigned Deck::size(){
+    return goals.size();
+}
+
 unsigned Deck::getGoal (){
     return goals.top();
 }
 
 bool Deck::isEmpty (){
-    return (goals.size() == 0);
+    return (goals.empty());
 }
 
 void Deck::remove (){
@@ -19,9 +23,10 @@ void Deck::remove (){
 }
 
 void Deck::restore(std::vector<unsigned> goalsVect){
-    goals.empty();
-    for (unsigned goal : goalsVect) {
+    while(!goals.empty())
+        goals.pop();
+
+    for (unsigned goal : goalsVect)
         goals.push(goal);
-    }
 }
 

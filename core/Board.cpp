@@ -107,7 +107,7 @@ void Board::insertTile(Position pos){
         insertInLine(pos);
     // sinon, cela veut dire qu'on essaie d'insérer dans une colonne
     } else {
-
+        insertInColumn(pos);
     }
 }
 
@@ -145,11 +145,24 @@ void Board::insertInLine(Position pos){
 
 void Board::insertInColumn(Position pos){
     Tile newTile = lastTile;
+    Tile newLast;
     // si on essaie d'insérer depuis le haut du plateau
     if(pos.line == 0){
-
+        newLast = board.at(board.size()-1).at(pos.column);
+        for(unsigned i = board.at(0).size()-1; i > 0; i--){
+            // sur une même colonne, une tuile recoit les valeurs de la tuile au dessus d'elle
+            board.at(i).at(pos.column) = board.at(i-1).at(pos.column);
+        }
+        board.at(0).at(pos.column) = newTile;
+        lastTile = newLast;
     // sinon, cela veut dire qu'on insere depuis le bas du plateau
     } else {
-
+        newLast = board.at(0).at(pos.column);
+        for(unsigned i = 0; i < board.size()-1; i++){
+            // sur une même colonne, une tuile recoit les valeurs de la tuile en dessous d'elle
+            board.at(i).at(pos.column) = board.at(i+1).at(pos.column);
+        }
+        board.at(board.size()-1).at(pos.column) = newTile;
+        lastTile = newLast;
     }
 }
