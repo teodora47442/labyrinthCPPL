@@ -1,8 +1,6 @@
 #ifndef POSITION_H
 #define POSITION_H
 
-#endif // POSITION_H
-
 /*!
  * \struct Position
  *
@@ -23,3 +21,5 @@ struct Position{
      */
     unsigned column;
 };
+
+#endif // POSITION_H

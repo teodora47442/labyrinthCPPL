@@ -1,4 +1,3 @@
-
 #ifndef LABYRINTH_H
 #define LABYRINTH_H
 

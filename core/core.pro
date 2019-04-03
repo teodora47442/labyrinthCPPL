@@ -20,4 +20,5 @@ SOURCES += \
     Deck.cpp \
     Player.cpp \
     Tile.cpp \
-    Board.cpp
+    Board.cpp \
+    labyrinth.cpp
