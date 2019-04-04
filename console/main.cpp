@@ -66,24 +66,28 @@ int main()
 //    printTile(t);
 //    printTile(tiles.at(0));
 
-    cout << endl << endl;
-    cout << "   ";
-    Color(0, 15);
-    cout << "    15    " << endl;
-    Color(15, 0);
-    cout << "   ";
-    cout << "    ";
-    Color(0, 15);
-    cout << "  ";
-    Color(15, 0);
-    cout << "    " << endl;
-    cout << "   ";
-    cout << "    ";
-    Color(0, 15);
-    cout << "  ";
-    Color(15, 0);
-    cout << "    " << endl;
+//    cout << endl << endl;
+//    cout << "   ";
+//    Color(0, 15);
+//    cout << "    15    " << endl;
+//    Color(15, 0);
+//    cout << "   ";
+//    cout << "    ";
+//    Color(0, 15);
+//    cout << "  ";
+//    Color(15, 0);
+//    cout << "    " << endl;
+//    cout << "   ";
+//    cout << "    ";
+//    Color(0, 15);
+//    cout << "  ";
+//    Color(15, 0);
+//    cout << "    " << endl;
 
-    vector<Tile> line = {Tile(Shape::I, 4, {1,0,1,0}), Tile(Shape::I, 2, {0,1,0,1})};
+//    vector<Tile> line = {Tile(Shape::I, 4, {1,0,1,0}), Tile(Shape::I, 2, {0,1,0,1})};
+    printTile(Tile(0, Shape::L, 4));
+    printTile(Tile(0, Shape::L, 4));
+    printTile(Tile(0, Shape::L, 4));
+    printTile(Tile(0, Shape::L, 4));
     return 0;
 }

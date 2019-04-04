@@ -8,7 +8,8 @@ LIBS += -L../lib -llibcore
 SOURCES += main.cpp \
     brol.cpp \
     TileTest.cpp \
-    DeckTest.cpp
+    DeckTest.cpp \
+    PlayerTest.cpp
 
 HEADERS += \
     catch.hpp \

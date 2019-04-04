@@ -16,6 +16,11 @@ class Tile
 
 private:
 
+ /**
+   * \brief The identification number of the tile. It must be unique.
+   */
+  unsigned id;
+
    /*!
    * \brief The shape of the tile. The tile can have a "T", "L" or "I" shape.
    */
@@ -63,7 +68,7 @@ public:
    * @param  goal : the goal of the tile
    * @param  orientation : the orientation of the tile
    */
-   Tile (Shape shape, unsigned goal, std::vector<bool> orientation);
+   Tile (unsigned id, Shape shape, unsigned goal, std::vector<bool> orientation);
 
    /**
     * \brief Constructor of a tile depending on the shape and the goal.
@@ -72,14 +77,21 @@ public:
     * @param shape : the shape of the tile
     * @param goal : the goal of the tile.
     */
-   Tile (Shape shape, unsigned goal);
+   Tile (unsigned id, Shape shape, unsigned goal);
+
+   /**
+    * \brief Gives the id of the tile in read only mode.
+    *
+    * @return the id of the tile.
+    */
+   unsigned getId() const;
 
   /**
-   * \brief gives the shape of the tile.
+   * \brief gives the shape of the tile in read only mode.
    *
    * @return the shape of the tile.
    */
-  Shape getShape ();
+  Shape getShape () const;
 
 
   /**
@@ -87,7 +99,7 @@ public:
    *
    * @return the orientation of the tile
    */
-  std::vector<bool> getOrientation ();
+  std::vector<bool> getOrientation () const;
 
 
   /**
@@ -95,7 +107,7 @@ public:
    *
    * @return the goal of the tile or 0 if the tile doesn't get any goal.
    */
-  unsigned getGoal ();
+  unsigned getGoal () const;
 
 
   /**
@@ -109,5 +121,14 @@ public:
 
 };
 
+/**
+ * \brief Overloading of the operator ==. It checks if two tiles are equals, that's
+ *        to say the id's, the shapes, the orientations and the goals are equals.
+ *
+ * @param lhs : the left hand side tile
+ * @param rhs : the right hand side tile
+ * @return true if the both tiles are equals, false otherwise.
+ */
+bool operator==(const Tile & lhs, const Tile & rhs);
 
 #endif // TILE_H

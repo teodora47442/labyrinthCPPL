@@ -22,40 +22,40 @@ Board::Board(unsigned size)
 void Board::init(std::vector<unsigned int> & goals){
     std::deque<Tile>& line0 = board.at(0);
     // ok
-    line0[0] = Tile(Shape::L, randomGoal(goals), {0, 1, 1, 0});
-    line0[2] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
-    line0[4] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
-    line0[6] = Tile(Shape::L, randomGoal(goals), {0, 0, 1, 1});
+    line0[0] = Tile(1, Shape::L, randomGoal(goals), {0, 1, 1, 0});
+    line0[2] = Tile(2, Shape::T, randomGoal(goals), {0, 1, 1, 1});
+    line0[4] = Tile(3, Shape::T, randomGoal(goals), {0, 1, 1, 1});
+    line0[6] = Tile(4, Shape::L, randomGoal(goals), {0, 0, 1, 1});
     std::deque<Tile>& line2 = board.at(2);
     // ok
-    line2[0] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
-    line2[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
-    line2[4] = Tile(Shape::T, randomGoal(goals), {0, 1, 1, 1});
-    line2[6] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
+    line2[0] = Tile(5, Shape::T, randomGoal(goals), {1, 1, 1, 0});
+    line2[2] = Tile(6, Shape::T, randomGoal(goals), {1, 1, 1, 0});
+    line2[4] = Tile(7, Shape::T, randomGoal(goals), {0, 1, 1, 1});
+    line2[6] = Tile(8, Shape::T, randomGoal(goals), {1, 0, 1, 1});
     std::deque<Tile>& line4 = board.at(4);
     // ok
-    line4[0] = Tile(Shape::T, randomGoal(goals), {1, 1, 1, 0});
-    line4[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
-    line4[4] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
-    line4[6] = Tile(Shape::T, randomGoal(goals), {1, 0, 1, 1});
+    line4[0] = Tile(9, Shape::T, randomGoal(goals), {1, 1, 1, 0});
+    line4[2] = Tile(10, Shape::T, randomGoal(goals), {1, 1, 0, 1});
+    line4[4] = Tile(11, Shape::T, randomGoal(goals), {1, 0, 1, 1});
+    line4[6] = Tile(12, Shape::T, randomGoal(goals), {1, 0, 1, 1});
     std::deque<Tile>& line6 = board.at(6);
     //
-    line6[0] = Tile(Shape::L, randomGoal(goals), {1, 1, 0, 0});
-    line6[2] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
-    line6[4] = Tile(Shape::T, randomGoal(goals), {1, 1, 0, 1});
-    line6[6] = Tile(Shape::L, randomGoal(goals), {1, 0, 0, 1});
+    line6[0] = Tile(13, Shape::L, randomGoal(goals), {1, 1, 0, 0});
+    line6[2] = Tile(14, Shape::T, randomGoal(goals), {1, 1, 0, 1});
+    line6[4] = Tile(15, Shape::T, randomGoal(goals), {1, 1, 0, 1});
+    line6[6] = Tile(16, Shape::L, randomGoal(goals), {1, 0, 0, 1});
 }
 
 void Board::fill(std::vector<unsigned int> & goals){
     std::vector<Tile> tiles;
     std::deque<Tile> line;
-
-    for(unsigned i = 1; i<=6; i++)
-        tiles.push_back(Tile(Shape::T, randomGoal(goals)));
-    for(unsigned i = 1; i<=16; i++)
-        tiles.push_back(Tile(Shape::L, randomGoal(goals)));
-    for(unsigned i = 1; i<=12; i++)
-        tiles.push_back(Tile(Shape::I, 0));
+    unsigned id = 17;
+    for(unsigned i = 1; i<=6; i++, id++)
+        tiles.push_back(Tile(id, Shape::T, randomGoal(goals)));
+    for(unsigned i = 1; i<=16; i++, id++)
+        tiles.push_back(Tile(id, Shape::L, randomGoal(goals)));
+    for(unsigned i = 1; i<=12; i++, id++)
+        tiles.push_back(Tile(id, Shape::I, 0));
 
     std::random_shuffle(tiles.begin(), tiles.end());
 

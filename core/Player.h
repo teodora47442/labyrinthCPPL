@@ -44,7 +44,7 @@ private:
      * During the game, the player sits on a tile.
      * At each round, the player can change his position (tile).
      */
-    Tile& currentPosition;
+    Tile currentPosition;
 
     /**
      * \brief Player's deck of goals.
@@ -101,15 +101,6 @@ public:
     unsigned getGoal();
 
     /**
-     * \brief This method replaces player's currentPosition by the destination tile.
-     * However, it does not verify if the path between his current position and
-     * destination tile exists.
-     *
-     * @param destination : new current tile of the player
-     */
-    void moveForward (Tile& destination);
-
-    /**
      * \brief Check if player reached all his goals from deck.
      *
      * @return true if the player reached all his goals, false otherwise.
@@ -123,10 +114,11 @@ public:
     void changeGoal ();
 
     /**
-     * \brief If player sits on the tile that is out of the board,
-     * then the player must be placed on the opposite tile in the row.
+     * \brief Changes the current tile where the player is sitting.
+     *
+     * @param tile : the new current tile for the player.
      */
-    void replace(Tile& tile);
+    void replace(Tile tile);
 
 };
 

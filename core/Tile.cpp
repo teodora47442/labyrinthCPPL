@@ -32,14 +32,15 @@ void Tile::checkParameters(Shape shape, unsigned goal, std::vector<bool> orienta
         throw std::invalid_argument("Invalid parameters for Tile");
 }
 
-Tile::Tile(Shape shape, unsigned goal, std::vector<bool> orientation) {
+Tile::Tile(unsigned id, Shape shape, unsigned goal, std::vector<bool> orientation) {
     checkParameters(shape, goal, orientation);
+    this->id = id;
     this->shape = shape;
     this->goal = goal;
     this->orientation = orientation;
 }
 
-Tile::Tile(Shape shape_, unsigned goal_) : shape(shape_), goal(goal_){
+Tile::Tile(unsigned id_, Shape shape_, unsigned goal_) : id(id_), shape(shape_), goal(goal_){
     for (unsigned i = 0; i<4;i++) {
         orientation.push_back(true);
     }
@@ -65,17 +66,21 @@ Tile::Tile(Shape shape_, unsigned goal_) : shape(shape_), goal(goal_){
 
 }
 
-Tile::Tile() : Tile(Shape::NO_SHAPE, 0){}
+Tile::Tile() : Tile(0, Shape::NO_SHAPE, 0){}
 
-Shape Tile::getShape(){
+unsigned Tile::getId() const{
+    return id;
+}
+
+Shape Tile::getShape() const{
     return shape;
 }
 
-std::vector<bool> Tile::getOrientation(){
+std::vector<bool> Tile::getOrientation() const{
     return orientation;
 }
 
-unsigned Tile::getGoal(){
+unsigned Tile::getGoal() const{
     return goal;
 }
 
@@ -86,4 +91,10 @@ void Tile::rotate(int direction){
         else
             std::rotate(orientation.rbegin(), orientation.rbegin()+1, orientation.rend());
     }
+}
+
+bool operator==(const Tile &lhs, const Tile &rhs){
+    return lhs.getId() == rhs.getId() && lhs.getShape()==rhs.getShape()
+            && lhs.getOrientation() == rhs.getOrientation()
+            && lhs.getGoal() == rhs.getGoal();
 }
